@@ -1,7 +1,7 @@
 {
   "name": "milad/yii2-upload-file",
   "description": "Yii2 File processing through single table",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "Milad",
