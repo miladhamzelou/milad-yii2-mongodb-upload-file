@@ -1,0 +1,36 @@
+# yii2-file-core
+
+Yii2 file upload with database managemen
+
+add component to your config
+
+```php
+'fileManager' => [
+    'class'                    => \miladh\file\FileManager::className(),
+    'alias'                    => \miladh\file\models\File::ALIAS_FRONTEND,
+    'db'                       => 'db',
+    'defaultImageThumbnail'    => '@frontend/web/images/thumb-image.jpg',
+    'defaultDocumentThumbnail' => '@frontend/web/images/thumb-document.jpg',
+    'defaultAudioThumbnail'    => '@frontend/web/images/thumb-audio.jpg',
+    'defaultVideoThumbnail'    => '@frontend/web/images/thumb-video.jpg',
+    'defaultOtherThumbnail'    => '@frontend/web/images/thumb-other.jpg',
+]
+```
+
+do migration via console
+```
+php yii migrate --migrationPath=@miladh/yii2-file-core/src/migrations
+```
+
+getting fileManager
+```php
+/** @var FileManager $fileManager */
+$fileManager = \Yii::$app->fileManager;
+```
+
+uploading file from fileInstance
+```php
+$fileInstance = UploadedFile::getInstanceByName('files');
+/** @var miladh\file\models\File $file */
+$file = $fileManager->upload($fileInstance);
+```
