@@ -1,4 +1,4 @@
-# yii2-file-core
+# yii2-upload-file
 
 Yii2 file upload with database managemen
 
@@ -19,7 +19,7 @@ add component to your config
 
 do migration via console
 ```
-php yii migrate --migrationPath=@miladh/yii2-file-core/src/migrations
+php yii migrate --migrationPath=@miladh/yii2-upload-file/src/migrations
 ```
 
 getting fileManager
