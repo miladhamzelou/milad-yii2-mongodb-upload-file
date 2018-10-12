@@ -16,7 +16,6 @@
   ],
   "type": "yii2-extension",
   "minimum-stability": "dev",
-  "prefer-stable": true,
   "require": {
     "php": ">=5.4.0",
     "yiisoft/yii2": ">=2.0",
