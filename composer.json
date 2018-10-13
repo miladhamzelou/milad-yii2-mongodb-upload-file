@@ -1,7 +1,6 @@
 {
   "name": "milad/yii2-mongodb-upload-file",
   "description": "Yii2 File processing through single collection",
-  "license": "MIT",
   "authors": [
     {
       "name": "Milad",
@@ -14,8 +13,6 @@
     "file",
     "database"
   ],
-  "minimum-stability": "dev",
-  "type": "yii2-extension",
   "require": {
     "php": ">=5.4.0",
     "yiisoft/yii2": ">=2.0",
@@ -26,5 +23,6 @@
     "psr-4": {
       "miladh\\file\\": "src/"
     }
-  }
+  },
+  "version": "1.0.0"
 }
