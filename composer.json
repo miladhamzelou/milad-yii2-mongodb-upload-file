@@ -15,7 +15,6 @@
     "database"
   ],
   "minimum-stability": "dev",
-  "prefer-stable": true,
   "type": "yii2-extension",
   "require": {
     "php": ">=5.4.0",
