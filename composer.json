@@ -1,6 +1,6 @@
 {
-  "name": "milad/yii2-upload-file",
-  "description": "Yii2 File processing through single table",
+  "name": "milad/yii2-mongodb-upload-file",
+  "description": "Yii2 File processing through single collection",
   "license": "MIT",
   "authors": [
     {

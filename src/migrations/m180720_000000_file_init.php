@@ -16,7 +16,7 @@ class m180720_000000_file_init extends Migration
     public function up()
     {
         // TODO: Implement up() method.
-        $this->createCollection(\miladh\file\models\File::collectionName());
+        $this->createCollection(\common\components\file\models\File::collectionName());
 
     }
 
@@ -29,7 +29,7 @@ class m180720_000000_file_init extends Migration
     public function down()
     {
         // TODO: Implement down() method.
-        $this->dropCollection(\miladh\file\models\File::collectionName());
+        $this->dropCollection(\common\components\file\models\File::collectionName());
 
     }
 }

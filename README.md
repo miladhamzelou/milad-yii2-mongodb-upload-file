@@ -1,6 +1,6 @@
-# yii2-upload-file
+# yii2-mongodb-upload-file
 
-Yii2 file upload with database managemen
+Yii2 file upload with database management
 
 add component to your config
 
@@ -19,7 +19,7 @@ add component to your config
 
 do migration via console
 ```
-php yii migrate --migrationPath=@miladh/yii2-upload-file/src/migrations
+php yii mongodb-migrate --migrationPath=@miladh/yii2-upload-file/src/migrations
 ```
 
 getting fileManager

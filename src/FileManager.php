@@ -5,8 +5,6 @@ namespace miladh\file;
 
 use miladh\file\models\File;
 use yii\base\Component;
-use yii\db\Connection;
-use yii\di\Instance;
 use yii\helpers\ArrayHelper;
 use yii\web\ForbiddenHttpException;
 use yii\web\UnauthorizedHttpException;
@@ -15,7 +13,6 @@ use yii\web\UploadedFile;
 /**
  * Class FileManager
  *
- * @package miladh\file
  */
 class FileManager extends Component
 {
@@ -105,9 +102,9 @@ class FileManager extends Component
     public function upload(UploadedFile $fileInstance, $path = null, $additionalInformation = null)
     {
 
-        if (!$this->allowGuestToUpload && \Yii::$app->user->isGuest) {
-            throw new UnauthorizedHttpException('Please login to continue upload');
-        }
+//        if (!$this->allowGuestToUpload && \Yii::$app->user->isGuest) {
+//            throw new UnauthorizedHttpException('Please login to continue upload');
+//        }
 
         if (!ArrayHelper::isIn($fileInstance->extension, $this->getAllowedExtensions())) {
             throw new NotSupportedException('Extension not supported');
@@ -182,7 +179,7 @@ class FileManager extends Component
         } elseif (ArrayHelper::isIn($extension, $this->allowedOtherExtensions)) {
             return File::TYPE_OTHER;
         } else {
-            return $defaulr;
+            return $default;
         }
     }
 
@@ -204,7 +201,7 @@ class FileManager extends Component
     public function init()
     {
         parent::init();
-        $this->db = Instance::ensure($this->db, Connection::className());
+//        $this->db = Instance::ensure($this->db, Connection::className());
     }
 
     public function uploadBase64($stringFile, $path = null, $additionalInformation = null)

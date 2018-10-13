@@ -14,7 +14,7 @@ use yii\mongodb\ActiveRecord;
  * Class RecordTable
  *
  * @package miladh\file\model
- * @property integer $id
+ * @property \MongoDB\BSON\ObjectID $_id
  * @property string  $type
  * @property string  $originalName
  * @property string  $alias
@@ -28,8 +28,8 @@ use yii\mongodb\ActiveRecord;
  * @property string  $thumbnailExtension
  * @property string  $thumbnailMimeType
  * @property string  $additionalInformation
- * @property string  $createdAt
- * @property string  $updatedAt
+ * @property string  $created_at
+ * @property string  $updated_at
  */
 class File extends ActiveRecord
 {
@@ -57,14 +57,33 @@ class File extends ActiveRecord
     /** @var FileManager */
     private $fileManager;
 
-    public static function getDb()
-    {
-        return \Yii::$app->fileManager->db;
-    }
+
 
     public static function collectionName()
     {
         return FileManager::$tableName;
+    }
+
+    public function attributes()
+    {
+        return [
+            '_id',
+            'type',
+            'originalName',
+            'alias',
+            'path',
+            'filename',
+            'size',
+            'extension',
+            'mimeType',
+            'thumbnailFilename',
+            'thumbnailSize',
+            'thumbnailExtension',
+            'thumbnailMimeType',
+            'additionalInformation',
+            'updated_at',
+            'created_at',
+        ];
     }
 
     public function behaviors()
@@ -305,7 +324,6 @@ class File extends ActiveRecord
 
         return true;
     }
-
 
     public function getMongoDate($time = null)
     {
